@@ -235,9 +235,8 @@ const RoadmapForm = ({
               <ul {...provided.droppableProps} ref={provided.innerRef}>
                 {steps.map((step, index) => {
                   return (
-                    <>
+                    <div key={step.libraryId}>
                       <Draggable
-                        key={step.libraryId} // TODO: libraryIdだとkeyが一意にならなくてバグるかも、バグったら対応する
                         draggableId={String(step.libraryId)}
                         index={index}
                       >
@@ -262,7 +261,7 @@ const RoadmapForm = ({
                           </div>
                         )}
                       </Draggable>
-                    </>
+                    </div>
                   )
                 })}
                 {provided.placeholder}

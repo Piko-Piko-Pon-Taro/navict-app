@@ -4,3 +4,8 @@
 html {
   @apply font-body;
 }
+
+/*スクロールバー非表示用*/
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

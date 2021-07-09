@@ -12,6 +12,7 @@ type AuthContextType = {
   signup: (method: Partial<SigninMethod>) => void
   logout: () => Promise<void>
   isLoggedIn: boolean
+  refreshAuth: () => Promise<void>
   user: User | null | undefined
   token: string | undefined
 }
@@ -65,6 +66,19 @@ export const AuthProvider = ({ children }: Props) => {
     }
   }
 
+  const refreshAuth = async () => {
+    if (!auth.currentUser) return
+    const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true)
+    // Send token to your backend via HTTPS
+    const res = await apiClient.signin.post({
+      body: { accessToken: idToken }
+    })
+    const user = res.body.user
+    const token = res.body.token
+    setUser(user)
+    setToken(token)
+  }
+
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (fbUser) => {
       if (!fbUser) {
@@ -102,6 +116,7 @@ export const AuthProvider = ({ children }: Props) => {
       value={{
         signup,
         logout,
+        refreshAuth,
         isLoggedIn: !!user,
         user,
         token

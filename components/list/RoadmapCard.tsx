@@ -1,7 +1,7 @@
 import type { RoadmapInfo, TagInfo } from '$/types'
 import Link from 'next/link'
 import Image from 'next/image'
-import UserIcon from '../UserIcon'
+import UserIcon from '../users/UserIcon'
 import Tag from '../parts/Tag'
 import React, { useState } from 'react'
 import { formatDate } from 'utils/utility'

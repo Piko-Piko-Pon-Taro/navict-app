@@ -42,7 +42,7 @@ const UpdateStepFormModal = ({
     <Dialog
       open={isOpen}
       onClose={() => setIsOpen(false)}
-      className="fixed z-10 max-h-screen top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2 bg-$white border-4 border-$primary rounded-2xl flex flex-col justify-center items-center shadow-$rich p-8 max-w-screen-lg"
+      className="fixed z-10 max-h-screen top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2 bg-$white rounded-2xl flex flex-col justify-center items-center shadow-$rich p-8 max-w-screen-lg"
     >
       <Dialog.Overlay />
       <Dialog.Title className="text-$t2 text-$primary text-center">

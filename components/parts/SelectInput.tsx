@@ -30,7 +30,8 @@ const SelectInput = ({
   const colourStyles: Partial<
     Styles<OptionTypeBase, true, GroupTypeBase<OptionTypeBase>>
   > = {
-    control: () => ({
+    control: (styles) => ({
+      ...styles,
       display: 'flex',
       backgroundColor: 'white',
       color: systemColorToColorCode('$shade1'),
@@ -41,7 +42,8 @@ const SelectInput = ({
       padding: '0.2em',
       cursor: 'text'
     }),
-    placeholder: () => ({
+    placeholder: (styles) => ({
+      ...styles,
       color: systemColorToColorCode('$shade1')
     }),
     menu: (styles) => ({

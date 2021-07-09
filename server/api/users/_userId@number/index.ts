@@ -14,6 +14,7 @@ export type Methods = {
    * [jn] PUT /users/_userId@number
    */
   put: {
+    reqFormat: FormData // required
     reqBody: UserUpdateBody
     resBody: UserWithoutPersonal
   }

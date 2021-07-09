@@ -4,6 +4,7 @@ import { FieldValues, UseFormRegister, ValidationRule } from 'react-hook-form'
 type Props = {
   register: UseFormRegister<FieldValues>
   name: string
+  defaultValue?: string
   placeholder?: string
   required?: string | ValidationRule<boolean>
   className?: string
@@ -14,6 +15,7 @@ type Props = {
 const RHFTextarea = ({
   register,
   name,
+  defaultValue,
   placeholder,
   required,
   className,
@@ -23,6 +25,7 @@ const RHFTextarea = ({
   return (
     <textarea
       className={`placeholder-$shade1 text-$primary ${className}`}
+      defaultValue={defaultValue}
       placeholder={placeholder}
       {...register(name, { required })}
       cols={cols}

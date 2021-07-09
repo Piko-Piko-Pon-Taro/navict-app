@@ -139,7 +139,7 @@ const UpdateStepForm = ({
         />
       </div>
       <RHFInput
-        className="p-2 text-left w-full mb-6 bg-$shade3"
+        className="p-2 text-left w-full my-6 bg-$shade3"
         register={(register as unknown) as UseFormRegister<FieldValues>}
         name="link"
         placeholder="https://navict-app.vercel.app/"

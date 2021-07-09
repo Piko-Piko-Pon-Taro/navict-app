@@ -1,5 +1,6 @@
 import firebase from 'firebase/app'
 import 'firebase/auth'
+import 'firebase/storage'
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FB_APIKEY,
@@ -14,4 +15,5 @@ if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig)
 }
 export const auth = firebase.auth()
+export const projectStorage = firebase.storage()
 export default firebase

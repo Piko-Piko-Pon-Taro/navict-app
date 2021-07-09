@@ -1,4 +1,3 @@
-import Layout from '~/components/Layout'
 import UserPage from './users/[userId]'
 import { useAuth } from '~/contexts/AuthContext'
 import { useRouter } from 'next/router'

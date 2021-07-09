@@ -1,8 +1,8 @@
 import { PrismaClient } from '@prisma/client'
-import type { Like, Prisma, User } from '$prisma/client'
+import type { Like, User } from '$prisma/client'
 import * as admin from 'firebase-admin'
 import { getRoadmapInfosByUserId, getRoadmapInfoById } from '$/service/roadmaps'
-import type { RoadmapInfo, UserWithoutPersonal } from '$/types'
+import type { RoadmapInfo, UserUpdateBody, UserWithoutPersonal } from '$/types'
 import { userWithoutPersonalSelect } from '$/prisma/options'
 
 admin.initializeApp({
@@ -68,7 +68,7 @@ export const getUserInfoById = async (id: User['id']) => {
 
 export const updateUser = async (
   id: User['id'],
-  partialUser: Prisma.UserUpdateInput
+  partialUser: UserUpdateBody
 ) => {
   const user = await prisma.user.update({
     where: { id },
